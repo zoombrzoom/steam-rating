@@ -2,7 +2,7 @@ local logger = require("logger")
 local millennium = require("millennium")
 
 local function on_load()
-    logger:info("[steam-rating] loading v1.0.13")
+    logger:info("[steam-rating] loading v1.0.14")
     millennium.ready()
 end
 

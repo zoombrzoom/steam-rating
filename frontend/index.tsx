@@ -253,6 +253,19 @@ function isHtmlElement(element: Element | null | undefined): element is HTMLElem
   return !!element && !!view && element instanceof view.HTMLElement;
 }
 
+function isSteamHoverPreview(win: Window, card: HTMLElement) {
+  let element = card.parentElement;
+
+  while (element && element !== win.document.body && element !== win.document.documentElement) {
+    const rect = element.getBoundingClientRect();
+    const oversizedLayer = rect.width > win.innerWidth * 1.5 && rect.height > win.innerHeight * 1.5;
+    if (oversizedLayer) return true;
+    element = element.parentElement;
+  }
+
+  return false;
+}
+
 function findCardForImage(img: HTMLImageElement) {
   const imageSource = img.currentSrc || img.src || img.getAttribute('src') || '';
 
@@ -457,6 +470,12 @@ function attachRating(win: Window, img: HTMLImageElement, appId: string) {
   const card = findCardForImage(img);
   if (!card) return;
 
+  if (isSteamHoverPreview(win, card)) {
+    directRatingRow(card)?.remove();
+    card.classList.remove(`${NS}-card-host`);
+    return;
+  }
+
   const existing = directRatingRow(card);
   if (existing && existing.dataset.appId === appId) {
     updateStars(existing, readRating(win, appId), false);
@@ -554,7 +573,7 @@ const SettingsContent = () => (
 );
 
 export default definePlugin(() => {
-  console.log('[steam-rating] frontend loading v1.0.13');
+  console.log('[steam-rating] frontend loading v1.0.14');
   installExistingWindows();
 
   Millennium.AddWindowCreateHook((context: any) => {

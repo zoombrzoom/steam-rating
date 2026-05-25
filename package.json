@@ -1,6 +1,6 @@
 {
   "name": "steam-rating",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Personal star ratings and completion counters below Steam library covers.",
   "type": "module",
   "main": "./frontend/index.tsx",

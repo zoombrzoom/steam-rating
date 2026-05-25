@@ -3,7 +3,7 @@
   "name": "steam-rating",
   "common_name": "Steam Rating",
   "description": "Adds personal star ratings and completion counters below Steam library covers.",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "useBackend": true,
   "backend": "backend",
   "frontend": "frontend",
