@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SteamClientHomebrew/Millennium/main/src/sys/plugin-schema.json",
+  "name": "steam-rating",
+  "common_name": "Steam Rating",
+  "description": "Adds personal star ratings and completion counters below Steam library covers.",
+  "version": "1.0.13",
+  "useBackend": true,
+  "backend": "backend",
+  "frontend": "frontend",
+  "backendType": "lua"
+}

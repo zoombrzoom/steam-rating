@@ -1,0 +1,30 @@
+{
+  "name": "steam-rating",
+  "version": "1.0.13",
+  "description": "Personal star ratings and completion counters below Steam library covers.",
+  "type": "module",
+  "main": "./frontend/index.tsx",
+  "author": "zoombrzoom",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zoombrzoom/steam-rating.git"
+  },
+  "scripts": {
+    "build": "millennium-ttc --build prod"
+  },
+  "dependencies": {
+    "@steambrew/api": "^5.5.3",
+    "@steambrew/client": "^5.5.3",
+    "@steambrew/ttc": "^2.7.3",
+    "@steambrew/webkit": "^5.5.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/traverse": "^7.28.3",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@types/webpack": "^5.28.5"
+  }
+}
