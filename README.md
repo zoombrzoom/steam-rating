@@ -2,6 +2,8 @@
 
 A Millennium plugin that adds personal ratings and completion markers directly to the Steam Library grid.
 
+![Steam Rating preview](docs/preview.png)
+
 ## Features
 
 - Rate games from 0.5 to 5 stars in half-star steps.
